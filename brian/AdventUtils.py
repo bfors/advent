@@ -99,8 +99,8 @@ class answer:
             return f"{x:,d}" if is_int(x) else f"{x}"
 
         secs = f"{self.secs:7.4f} seconds".replace(" 0.", "  .")
-        ok = "" if self.ok else f" !!!! INCORRECT !!!! Expected {commas(self.solution)}"
-        return f"{secs}, answer: {commas(self.got)}{ok}"
+        ok = "" if self.ok else f" !!!! INCORRECT !!!! Expected {self.solution}"
+        return f"{secs}, answer: {self.got}{ok}"
 
 
 Char = str  # Intended as the type of a one-character string
