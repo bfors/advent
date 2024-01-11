@@ -18,8 +18,6 @@ import re
 import string
 import time
 
-print("starting import")
-
 current_year = 2021  # Subdirectory name for input files
 lines = str.splitlines  # By default, split input text into lines
 
