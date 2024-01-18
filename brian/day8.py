@@ -9,8 +9,8 @@ def get_dict(nodes):
     for node in nodes:
         element = node.split(" ")[0]
         L = node[node.find("(") + 1 : node.find(",")]
-        R = node[node.find(", ") + 2 : node.find(")")]
-        d[element] = {"L": L, "R": R}
+        R = node[node.find(", ") + 2 : node.find(")")]#########################
+        d[element] =   {"L": L, "R": R}
     return d
 
 def haunted(input):
@@ -52,6 +52,5 @@ def haunted2(input):
 
 
 print(answer(8.2, 16563603485021, lambda: haunted2(in8)))
-
 
 
