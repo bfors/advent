@@ -50,6 +50,6 @@ def mirage2(input):
     return sum(decipher2(line) for line in input)
 
 
-print(answer(9.2, 0, lambda: mirage2(in9)))
+print(answer(9.2, 1097, lambda: mirage2(in9)))
 
 
