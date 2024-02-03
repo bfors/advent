@@ -1,3 +1,4 @@
+# AdventUtils code was written by [norvig](https://github.com/norvig/pytudes/tree/main/ipynb).
 from collections import Counter, defaultdict, namedtuple, deque, abc
 from dataclasses import dataclass, field
 from itertools import permutations, combinations, cycle, chain, islice
