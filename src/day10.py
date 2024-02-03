@@ -2,10 +2,12 @@ from AdventUtils import *
 import AdventUtils
 AdventUtils.current_year = 2023
 
-def move(location, up=0, down=0, left=0, right=0):
+def move(location, up=0, down=0, left=0, right=0) -> tuple:
     y = right - left
     x = down - up
-    return tuple(map(sum, zip(location, (x,y))))
+    t =  tuple(map(sum, zip(location, (x,y))))
+    return t
+
 
 def get_coordinates(grid, loc):
     return [t for t in [move(loc, up=1), move(loc, down=1), move(loc,left=1), move(loc,right=1)] if t in grid]
@@ -22,7 +24,6 @@ def pipe(input):
     path = [start]
     location = start
 
-    coordinates = get_coordinates(grid, location)
     location = move(location, up=1)
     path.append(location)
 
