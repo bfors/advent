@@ -6,7 +6,7 @@ AdventUtils.current_year = 2023
 input = parse(11, parser=list, show=0)
 
 
-def cosmic(input):
+def cosmic(input, exp=1):
     gx = []
 
     # Keep index of expanded space
@@ -16,19 +16,21 @@ def cosmic(input):
     # scan rows
     y = 0
     for line in input:
-        if line == len(line) * ["."]:
-            y += 1
         y_expansion.append(y)
-        y += 1
+        if line == len(line) * ["."]:
+            y += exp
+        else:
+            y += 1
 
     # scan columns
     x = 0
     for i in range(len(input[0])):
+        x_expansion.append(x)
         col = [p[i] for p in input]
         if col == len(col) * ["."]:
+            x += exp
+        else:
             x += 1
-        x_expansion.append(x)
-        x += 1
 
     for y, line in enumerate(input):
         for x, c in enumerate(line):
@@ -46,4 +48,5 @@ def cosmic(input):
     return s
 
 
-print(answer(11.1, 0, lambda: cosmic(input)))
+print(answer(11.1, 9724940, lambda: cosmic(input, 2)))
+print(answer(11.1, 9724940, lambda: cosmic(input, 1000000)))
