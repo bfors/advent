@@ -53,7 +53,7 @@ def get_text(day_or_text: Union[int, str]) -> str:
     if isinstance(day_or_text, str):
         return day_or_text
     else:
-        filename = f"../inputs/{current_year}/input{day_or_text}.txt"
+        filename = f"inputs/{current_year}/input{day_or_text}.txt"
         return pathlib.Path(filename).read_text()
 
 
