@@ -7,7 +7,7 @@ input = parse(11, parser=list, show=0)
 
 
 def cosmic(input, exp=1):
-    gx = []
+    galaxies = []
 
     # Keep index of expanded space
     y_expansion = []
@@ -35,9 +35,9 @@ def cosmic(input, exp=1):
     for y, line in enumerate(input):
         for x, c in enumerate(line):
             if c == "#":
-                gx.append((x_expansion[x], y_expansion[y]))
+                galaxies.append((x_expansion[x], y_expansion[y]))
 
-    prod = combinations(gx, r=2)
+    prod = combinations(galaxies, r=2)
     s = 0
     for p in prod:
         galaxy1, galaxy2 = p
@@ -49,4 +49,4 @@ def cosmic(input, exp=1):
 
 
 print(answer(11.1, 9724940, lambda: cosmic(input, 2)))
-print(answer(11.1, 9724940, lambda: cosmic(input, 1000000)))
+print(answer(11.2, 9724940, lambda: cosmic(input, 1000000)))
