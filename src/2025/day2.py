@@ -1,3 +1,7 @@
-with open("inputs/2025/input1.txt", "r") as f:
-    for line in f:
-        print(line)
+text = None
+with open("inputs/2025/input2.txt", "r") as f:
+    text = f.read()
+
+
+for num in text.split(","):
+    print(num)
